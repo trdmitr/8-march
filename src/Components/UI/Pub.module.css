@@ -41,7 +41,7 @@
     height: 35px;
     position: absolute;
     left: 50%;
-    bottom: -65px;
+    bottom: -81px;
     transform: translate(-50%, -50%);
     background: var(--tributeAfterBefore);
     border-radius: 50%;
