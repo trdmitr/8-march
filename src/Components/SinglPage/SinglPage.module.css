@@ -64,13 +64,13 @@
   
   .linkTo {
     position: absolute;
-    top: 96%;
+    top: 98%;
     left: 31%;
     background-color: red;
     border: none;
     color: white;
     padding: 2px 6px;
-    font-size: 17px;
+    font-size: 23px;
     cursor: pointer;
     border-radius: .5em;
     z-index: 7;
