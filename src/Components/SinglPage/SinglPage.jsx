@@ -7,10 +7,41 @@ import CaverButton from '../UI/Buttons/CaverButton'
 import IconButtonHome from '../UI/Buttons/IconButtonHome'
 import BackButton from '../UI/Buttons/MyButton';
 import { Context } from '../context';
+import ReactPlayer from 'react-player';
 const SingleOne = () => {
   const navigate = useNavigate();
   const params = useParams();
   const songs = useContext(Context);
+  const tzitata = (imgLink) => {
+    return (
+      <div className={classes.tziTata}>
+         {
+        imgLink.includes('http') ? <img className={classes.tziTata} src={imgLink} width={80} alt="Цитаты" />
+          : <p className={classes.tziTata}>{imgLink}</p>
+      }
+      </div>
+    )
+  }
+  const audioSource = (linkAuidio, linkName) => {
+    return (
+      <div>
+        <p>{linkName}</p>
+        <audio controls className={linkAuidio ? '' : classes.mediaHidden}
+          src={linkAuidio} type="audio/mpeg" />
+      </div>
+    )
+  }
+
+  const videoSource = (linkVideo, linkName) => {
+    return (
+        <div>
+    <p>{linkName}</p>
+    {linkVideo.includes('youtu.be') ? <ReactPlayer className={linkVideo ? '' : classes.mediaHidden.join(' ')} id={classes.videoFrame} url={linkVideo} controls={true} /> 
+    :  <video className={[classes.videoBlock, linkVideo ? '' : classes.mediaHidden].join(' ')} src={linkVideo} controls={true} type="video/mp4" ></video>}
+    </div>
+    )
+  }
+
   const currSings = useMemo(() => {
     // eslint-disable-next-line
     return songs.filter(songs => songs.id === params.id);
@@ -24,41 +55,27 @@ const SingleOne = () => {
           <div className={classes.headerSong}>
             <h2>{currSing.name}</h2></div>
           <a className={[classes.linkTo, currSing.linkTo ? '' : classes.mediaHidden].join(' ')} href={currSing.linkTo} target="_blank" rel="noopener noreferrer"> Канал исполнителя </a>
-          <div className={[
-            classes.audioBlock,
-            currSing.audio1 ? '' : classes.mediaHidden].join(' ')
-          }>
-            <p>{currSing.audio_name1}</p>
-            <audio controls className={currSing.audio1 ? '' : classes.mediaHidden}
-              src={currSing.audio1} type="audio/mpeg" />
-            <p>{currSing.audio_name2}</p>
-            <audio controls className={currSing.audio2 ? '' : classes.mediaHidden}
-              src={currSing.audio2} type="audio/mpeg" />
-            <p>{currSing.audio_name3}</p>
-            <audio controls className={currSing.audio3 ? '' : classes.mediaHidden}
-              src={currSing.audio3} type="audio/mpeg" />
+          {tzitata(currSing.picture)}
+          <div className=
+            {
+              classes.audioBlock
+            }>
+            {audioSource(currSing.audio1, currSing.audio_name1)}
+            {audioSource(currSing.audio2, currSing.audio_name2)}
+            {audioSource(currSing.audio3, currSing.audio_name3)}
           </div>
-          <div className={classes.tziTata}>
-            {/* <img className={classes.tziImage} src={currSing.picture_tzitata} width={80} alt="Цитаты" /> */}
+          
+          {/* <div className={classes.tziTata}>
+            <img className={classes.tziImage} src={currSing.picture_tzitata} width={80} alt="Цитаты" />
             <p>{currSing.picture}</p>
+          </div> */}
+          <div className= {[classes.videoBlock, currSing.video1 ? '' : classes.mediaHidden].join(' ')} 
+            >
+            {videoSource(currSing.video1, currSing.video_name1)}
+            {videoSource(currSing.video2, currSing.video_name2)}
+            {videoSource(currSing.video3, currSing.video_name3)}
           </div>
-          <div className={[
-            classes.videoBlock,
-            currSing.video1 ? '' : classes.mediaHidden].join(' ')
-          }>
-            {/* <p>{currSing.video_name1}</p> */}
-            {/* <ReactPlayer className={currSing.video1 ? '': classes.mediaHidden}
-id= {classes.videoFrame} url = {currSing.video1} id= {classes.videoFrame}  /> */}
-            <p>{currSing.video_name1}</p>
-            <video className={currSing.video1 ? '' : classes.mediaHidden} src={currSing.video1} id={classes.videoFrame} controls={true} type="video/mp4" ></video>
-            <p>{currSing.video_name2}</p>
-            {/* <ReactPlayer className={currSing.video2 ? '': classes.mediaHidden} id={classes.videoFrame} url = {currSing.video2}  controls={true} /> */}
-            <video className={currSing.video2 ? '' : classes.mediaHidden} src={currSing.video2} id={classes.videoFrame} controls={true} type="video/mp4" ></video>
-            <p>{currSing.video_name3}</p>
-            {/* <ReactPlayer className={currSing.video3 ? '': classes.mediaHidden} id={classes.videoFrame} url = {currSing.video3} controls={true} /> */}
-            {/* <video className={currSing.video3 ? '': classes.mediaHidden} src={currSing.video3} id = {classes.videoFrame} controls={true} ></video> */}
-            <video className={currSing.video3 ? '' : classes.mediaHidden} src={currSing.video3} id={classes.videoFrame} controls={true} type="video/mp4" ></video>
-          </div>
+           
       </div>
        
        </>

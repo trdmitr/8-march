@@ -5,7 +5,7 @@ import CaverButton from '../UI/Buttons/CaverButton'
 import IconButtonHome from '../UI/Buttons/IconButtonHome'
 const FrontPage = () => {
     const navigate = useNavigate();
-  const imgUrl = "https://sun9-58.userapi.com/impg/YUvWNL-HQjJy4I_PfraS5GJdg9Sxg3-DFB7cpA/pGcRov2WE3U.jpg?size=610x933&quality=96&sign=815d8a4c90403925e1b2d5e42ecfe9a0&type=album"
+  const imgUrl = "https://sun9-65.userapi.com/impg/2Lja6JtCEPXMAfmmWVXb4c5RUA0FGJoKVwWDQw/ndHjJDmr3lY.jpg?size=852x802&quality=96&sign=05ab4a84a7f79a9ec9359e226d1fe3d4&type=album"
   const imgAlt = "Каверы Подземки"
   return (
   

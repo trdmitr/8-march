@@ -54,7 +54,7 @@
     border-radius: 0.5rem;
     /* border: 2px solid var(--titleSongColor); */
     border-bottom: 4px solid #b2b1b1;
-    text-shadow: -1px -1.6px 0px #16259d;
+    /* text-shadow: -1px -1.6px 0px #16259d; */
     box-shadow: var(--boxShadow);
     cursor: pointer;
   }
@@ -82,7 +82,7 @@
   
   }
   
-  .audioBlock>p {
+  .audioBlock p {
     font-size: 1.8rem;
     text-align: center;
     color: var(--colorText);
@@ -93,7 +93,7 @@
     box-shadow: var(--boxShadow);
   }
   
-  .videoBlock>p {
+  .videoBlock p {
     display: block;
     font-size: 1.8rem;
     text-align: center;
@@ -148,6 +148,14 @@
       box-shadow: var(--boxShadow);
       border-radius: 1em;
       /* opacity:70% */
+  }
+  .tziTata p {
+    font-size: 1em;
+    color: var(--colorText);
+    border:
+    3px       /* width */
+    solid     /* style */
+    2196f3;  /* color */
   }
   
   .tziImage {

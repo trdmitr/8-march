@@ -4,9 +4,9 @@
     height: 61rem;
     overflow-y: scroll;
     scrollbar-width: none;
-    
-    box-shadow: inset 19px -19px 38px #66a9da, inset -19px 19px 38px #4450a7b8;
-    background-color: #7385d359;
+    box-shadow: inset 19px -19px 38px #73da66cc, inset -19px 19px 38px #82a744b8;
+    /* box-shadow: inset 19px -19px 38px #66a9da, inset -19px 19px 38px #4450a7b8; */
+    background-color: #a1d37359;
   background-image: var(--allBackroundImage);
   }
   .content::-webkit-scrollbar {
