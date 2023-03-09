@@ -43,7 +43,11 @@
     box-shadow: inset 19px -19px 38px #dad466,
       inset -19px 19px 38px #a7a244;
   }
-  
+  .front_footer {
+    margin-bottom: 25px;
+    width: 277px;
+    height: 100px;
+  }
   .front_media {
     display: flex;
     flex: 1 1 auto;

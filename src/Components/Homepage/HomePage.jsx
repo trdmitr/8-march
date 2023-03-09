@@ -25,9 +25,8 @@ const FrontPage = () => {
                 <div className={classes.front_body}>
                     <span>Неотразимым Подземным девушкам посвящаем! </span>
                 </div>
-                <div className={classes.front_media}>
-                  {/* <Img imgUrl = {imgUrl} imgAlt={imgAlt}/> */}
-                    <img src={imgFooter} width={50} alt="Каверы Подземки" />
+                <div className={classes.front_footer}> 
+                    <img src={imgFooter} height={200} width = {512} alt="Каверы Подземки" />
                 </div>
       </div>
     </div>
