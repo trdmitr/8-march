@@ -70,7 +70,7 @@
   @media screen and (max-width: 2200px) {
     .col {
       font-size: 20px;
-      width: calc(50% - 41px);
+      width: calc(36% - 41px);
       justify-content: center;
       align-items: center;
       flex-wrap: wrap;
